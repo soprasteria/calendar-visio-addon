@@ -1,0 +1,53 @@
+﻿/**
+ * SPDX-FileCopyrightText: "Copyright 2026, Sopra Steria France"
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+.visio-button-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* Align with Calendar's property rows that have an icon offset */
+    padding-left: calc(var(--default-grid-baseline, 4px) * 9);
+    margin-top: 8px;
+}
+
+/* Use Nextcloud CSS variables so the button inherits the active theme */
+.visio-meeting-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: var(--color-primary, #0082c9);
+    color: var(--color-primary-text, #fff);
+    border: none;
+    border-radius: var(--border-radius, 3px);
+    font-weight: 500;
+    padding: 6px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.visio-meeting-btn:hover:not(:disabled) {
+    background-color: var(--color-primary-hover, #006aa3);
+}
+
+.visio-meeting-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Admin settings panel */
+#calendar-visio-addon-admin {
+    max-width: 480px;
+}
+
+#calendar-visio-addon-admin .visio-setting-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 16px;
+}
+
+#calendar-visio-addon-admin .input-wide {
+    width: 100%;
+}

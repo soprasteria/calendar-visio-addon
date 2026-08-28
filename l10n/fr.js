@@ -1,0 +1,30 @@
+//SPDX-FileCopyrightText: "Copyright 2026, Sopra Steria France"
+//SPDX-License-Identifier: AGPL-3.0-or-later
+// Guard: OC.L10n may not be initialized yet in Nextcloud 28+ deferred loading
+if (typeof OC !== 'undefined' && OC.L10n && typeof OC.L10n.register === 'function') {
+    OC.L10n.register(
+        'calendar_visio_addon',
+        {
+            "Create Visio meeting" : "Créer une réunion Visio",
+            "Creating..." : "Création en cours...",
+            "Unknown error" : "Erreur inconnue",
+            "Visio meeting link added to location" : "Lien de réunion Visio ajouté au lieu",
+            "Could not create Visio meeting: {error}" : "Impossible de créer la réunion Visio : {error}",
+            "Link added" : "Lien ajouté",
+            "Failed - retry" : "Échec — réessayer",
+            "Calendar Visio Add-on" : "Configuration Visio",
+            "Configure the Visio (Meet) API endpoint and OAuth2 credentials used to generate meeting links on behalf of users." : "Configurez le point de terminaison de l'API Visio et les identifiants OAuth2 pour générer des liens de réunion au nom des utilisateurs.",
+            "Visio API Base URL" : "URL de base de l'API Visio",
+            "Base URL of the Meet instance (e.g. https://visio.example.org). Do not include /api or /external-api." : "URL de base de l'instance Visio. Ne pas inclure /api ou /external-api.",
+            "OAuth2 Client ID" : "Client ID OAuth2",
+            "client_id of the Application registered in Meet (Django Admin)." : "client_id de l'Application enregistrée dans Visio.",
+            "OAuth2 Client Secret" : "Client Secret OAuth2",
+            "Leave empty to keep the existing secret." : "Laisser vide pour conserver le secret existant.",
+            "Leave empty to keep existing secret" : "Laisser vide pour conserver le secret existant",
+            "Save" : "Enregistrer",
+            "Saved" : "Enregistré",
+            "Save failed" : "Échec de l'enregistrement"
+        },
+        "nplurals=2; plural=(n != 1);"
+    );
+}

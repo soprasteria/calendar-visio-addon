@@ -1,0 +1,40 @@
+name: Publish release
+
+on:
+  push:
+    tags:
+    - 'v*.*.*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Package app
+      id: package
+      run: |
+        APP_ID=calendar_visio_addon
+        VERSION=${GITHUB_REF_NAME#v}
+        STAGE_DIR="$(mktemp -d)/${APP_ID}"
+        mkdir -p "$STAGE_DIR"
+
+        # Only ship runtime files needed by Nextcloud to install/run the app.
+        cp -r appinfo css img js l10n lib templates "$STAGE_DIR"/
+        cp README.md LICENSE CHANGELOG.md "$STAGE_DIR"/
+
+        ARCHIVE="${APP_ID}-${VERSION}.tar.gz"
+        tar -czf "$ARCHIVE" -C "$(dirname "$STAGE_DIR")" "$APP_ID"
+
+        echo "archive=${ARCHIVE}" >> "$GITHUB_OUTPUT"
+
+    - name: Publish GitHub release
+      uses: softprops/action-gh-release@v2
+      with:
+        files: ${{ steps.package.outputs.archive }}
+        generate_release_notes: true

@@ -1,0 +1,33 @@
+{
+    "name": "calendar-visio-addon",
+    "version": "1.0.0",
+    "description": "Nextcloud Calendar add-on — Visio meeting integration",
+    "license": "AGPL-3.0-or-later",
+    "private": true,
+    "scripts": {
+        "build": "cross-env NODE_ENV=production webpack --progress --config webpack.config.js",
+        "dev": "cross-env NODE_ENV=development webpack --progress --config webpack.config.js",
+        "watch": "cross-env NODE_ENV=development webpack --progress --watch --config webpack.config.js",
+        "lint": "eslint --ext .js js/",
+        "lint:fix": "eslint --ext .js js/ --fix",
+        "test:unit": "echo \"No JS unit tests yet\" && exit 0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.29.0",
+        "@babel/preset-env": "^7.28.0",
+        "@nextcloud/browserslist-config": "^3.1.0",
+        "@nextcloud/eslint-config": "^8.4.0",
+        "babel-loader": "^10.0.0",
+        "cross-env": "^10.1.0",
+        "eslint": "^8",
+        "webpack": "^5",
+        "webpack-cli": "^6"
+    },
+    "browserslist": [
+        "extends @nextcloud/browserslist-config"
+    ],
+    "engines": {
+        "node": "^24.0.0",
+        "npm": "^11.3.0"
+    }
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+  - SPDX-FileCopyrightText: "Copyright 2026, Sopra Steria France"
+  - SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+<info xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+    <id>calendar_visio_addon</id>
+    <name>Calendar Visio Add-on</name>
+    <summary>Add a Visio meeting link to Calendar events in one click</summary>
+    <description><![CDATA[
+        Adds a "Create Visio meeting" button to the Nextcloud Calendar event editor.
+        Clicking the button calls an external Visio API, obtains a meeting URL, and
+        inserts it into the event description automatically.
+
+        Requires a Visio API endpoint configured via the admin settings.
+    ]]></description>
+    <version>1.0.0</version>
+    <licence>AGPL-3.0-or-later</licence>
+    <author mail="mohamed.benhammouda@soprasteria.com" homepage="https://github.com/mbenhammouda">Mohamed Ben Hammouda</author>
+    <namespace>CalendarVisioAddon</namespace>
+    <category>integration</category>
+    <website>https://github.com/soprasteria/calendar-visio-addon.git</website>
+    <bugs>https://github.com/soprasteria/calendar-visio-addon/issues</bugs>
+    <repository type="git">https://github.com/soprasteria/calendar-visio-addon.git</repository>
+    <screenshot>https://github.com/soprasteria/calendar-visio-addon/screenshot.png</screenshot>
+    <dependencies>
+        <nextcloud min-version="32" max-version="32" />
+        <app>calendar</app>
+    </dependencies>
+    <settings>
+        <admin>OCA\CalendarVisioAddon\Settings\AdminSettings</admin>
+        <admin-section>OCA\CalendarVisioAddon\Settings\AdminSection</admin-section>
+    </settings>
+</info>

@@ -1,0 +1,29 @@
+# Composer
+/vendor/
+/vendor-bin/*/vendor/
+
+# NPM
+/node_modules/
+
+# Build artifacts
+/js/dist/
+/build/artifacts/
+
+# PHP-CS-Fixer cache
+/.php-cs-fixer.cache
+
+# IDE
+/.idea/
+/.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Psalm
+/psalm.cache/
+
+#PHP
+.phpunit.result.cache

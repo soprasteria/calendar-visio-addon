@@ -37,8 +37,9 @@ A Nextcloud Calendar plugin that adds a **"Create Visio meeting"** button direct
 ```bash
 cd /var/www/html/custom_apps
 git clone https://github.com/soprasteria/calendar-visio-addon.git calendar_visio_addon
-cd calendar_visio_addon
-# No build step needed — JS is pre-compiled in js/
+# Adjust the ownership before enabling the app
+chown -R www-data:www-data /var/www/html/custom_apps/calendar_visio_addon
+# Enable the app
 php /var/www/html/occ app:enable calendar_visio_addon
 ```
 
@@ -53,10 +54,8 @@ cd /var/www/html/custom_apps
 RELEASE_VERSION=1.0.0
 ARCHIVE="calendar_visio_addon-${RELEASE_VERSION}.tar.gz"
 RELEASE_URL="https://github.com/soprasteria/calendar-visio-addon/releases/download/v${RELEASE_VERSION}/${ARCHIVE}"
-
 # Download the release
 curl -fL "$RELEASE_URL" -o "$ARCHIVE"
-
 # Extract the .tar.gz archive
 tar -xzf "$ARCHIVE"
 rm "$ARCHIVE"
